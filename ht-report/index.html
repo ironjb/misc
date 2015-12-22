@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HT Report</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+	<div class="container ht-report" data-ng-app="app" data-ng-controller="htReportCtrl">
+		<div class="hidden-print">
+			<div class="jumbotron">
+				<h2>Elders Quorum Report</h2>
+			</div>
+			<form class="form-horizontal" data-ng-submit="formSubmit();">
+				<div class="form-group">
+					<label for="month" class="control-label col-xs-6">Month</label>
+					<div class="col-xs-3">
+						<select name="month" id="month" class="form-control" data-ng-model="model.month" data-ng-options="m for m in months"></select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="year" class="control-label col-xs-6">Year</label>
+					<div class="col-xs-3"><input type="number" class="form-control" id="year" name="year" data-ng-model="model.year" /></div>
+				</div>
+				<div class="row">
+					<div class="col-xs-6 col-xs-offset-3">
+						<hr />
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="elderCount" class="control-label col-xs-6">Total Number of Elders</label>
+					<div class="col-xs-3"><input type="number" class="form-control" id="elderCount" name="elderCount" data-ng-model="model.elderCount" /></div>
+				</div>
+				<div class="form-group">
+					<label for="elderAttend" class="control-label col-xs-6">Elders that attended</label>
+					<div class="col-xs-3"><input type="number" class="form-control" id="elderAttend" name="elderAttend" data-ng-model="model.elderAttend" /></div>
+				</div>
+				<div class="form-group">
+					<label for="prospectiveElderCount" class="control-label col-xs-6">Total Number of Prospective Elders</label>
+					<div class="col-xs-3"><input type="number" class="form-control" id="prospectiveElderCount" name="prospectiveElderCount" data-ng-model="model.prospectiveElderCount" /></div>
+				</div>
+				<div class="form-group">
+					<label for="prospectiveElderAttend" class="control-label col-xs-6">Prospective Elders that attended</label>
+					<div class="col-xs-3"><input type="number" class="form-control" id="prospectiveElderAttend" name="prospectiveElderAttend" data-ng-model="model.prospectiveElderAttend" /></div>
+				</div>
+				<div class="row">
+					<div class="col-xs-6 col-xs-offset-3">
+						<hr />
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="familiesAssigned" class="control-label col-xs-6">Families Assigned</label>
+					<div class="col-xs-3"><input type="number" class="form-control" id="familiesAssigned" name="familiesAssigned" data-ng-model="model.familiesAssigned" /></div>
+				</div>
+				<div class="form-group">
+					<label for="familiesNotAssigned" class="control-label col-xs-6">Families Not Assigned</label>
+					<div class="col-xs-3"><input type="number" class="form-control" id="familiesNotAssigned" name="familiesNotAssigned" data-ng-model="model.familiesNotAssigned" /></div>
+				</div>
+				<div class="form-group">
+					<label for="familiesVisited" class="control-label col-xs-6">Families Visited</label>
+					<div class="col-xs-3"><input type="number" class="form-control" id="familiesVisited" name="familiesVisited" data-ng-model="model.familiesVisited" /></div>
+				</div>
+				<div class="row">
+					<div class="col-xs-6 col-xs-offset-3">
+						<hr />
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="companionshipCount" class="control-label col-xs-6">Number of companionships</label>
+					<div class="col-xs-3"><input type="number" class="form-control" id="companionshipCount" name="companionshipCount" data-ng-model="model.companionshipCount" /></div>
+				</div>
+				<div class="form-group">
+					<label for="ppiCount" class="control-label col-xs-6">Number of PPIs</label>
+					<div class="col-xs-3"><input type="number" class="form-control" id="ppiCount" name="ppiCount" data-ng-model="model.ppiCount" /></div>
+				</div>
+				<!-- .form-group>label.control-label.col-xs-6[for=elderCount]{elderCount}+.col-xs-3>input.form-control#elderCount[type=number name=elderCount data-ng-model=model.elderCount] -->
+				<pre>{{model}}</pre>
+			</form>
+		</div>
+		<div class="row">
+			<div class="col-xs-3 small">Monthly Member Progress Report</div>
+			<div class="col-xs-6 text-center">
+				<h2>Elder's Quorum</h2>
+			</div>
+			<div class="col-xs-3 text-right">Nampa 6th Ward</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-4 col-xs-offset-2">
+				<div class="underline">&nbsp;</div>
+			</div>
+			<div class="col-xs-2">
+				<div class="text-center underline"><strong>{{model.month}}</strong></div>
+			</div>
+			<div class="col-xs-2">
+				<div class="text-center underline"><strong>{{model.year}}</strong></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-4 col-xs-offset-2">
+				<div class="small">Quorum President Signature</div>
+			</div>
+			<div class="col-xs-2">
+				<div class="small text-center">Month</div>
+			</div>
+			<div class="col-xs-2">
+				<div class="small text-center">Year</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<hr class="lg" />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-7">
+				<h4>Priesthood Meeting Attendance</h4>
+				<div class="row">
+					<div class="col-xs-3"><strong>Elders</strong></div>
+					<div class="col-xs-9">
+						<table class="table table-condensed table-borderless table-no-bottom-margin">
+							<tbody>
+								<tr class="table-col-4">
+									<td>
+										<div class="text-center number-box">{{model.elderCount*1}}</div>
+									</td>
+									<td>
+										<div class="text-center number-box">{{model.elderAttend*1}}</div>
+									</td>
+									<td>
+										<div class="text-center number-box">{{model.elderCount - model.elderAttend}}</div>
+									</td>
+									<td>
+										<div class="text-center number-box"><strong>{{(model.elderAttend / model.elderCount)*100 | number: 0}}%</strong></div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-3"><strong>Prospective Elders</strong></div>
+					<div class="col-xs-9">
+						<table class="table table-condensed table-borderless table-no-bottom-margin">
+							<tbody>
+								<tr class="table-col-4">
+									<td>
+										<div class="text-center number-box">{{model.prospectiveElderCount * 1}}</div>
+									</td>
+									<td>
+										<div class="text-center number-box">{{model.prospectiveElderAttend * 1}}</div>
+									</td>
+									<td>
+										<div class="text-center number-box">{{model.prospectiveElderCount - model.prospectiveElderAttend}}</div>
+									</td>
+									<td>
+										<div class="text-center number-box"><strong>{{(model.prospectiveElderAttend / model.prospectiveElderCount) * 100 | number: 0}}%</strong></div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-9 col-xs-offset-3">
+						<table class="table table-condensed table-borderless table-no-bottom-margin">
+							<tbody>
+								<tr class="table-col-4 micro-text">
+									<td>Number enrolled or assigned to Quorum</td>
+									<td>Attended at least 1 P'hood meeting during month</td>
+									<td>Not attending any P'hood meetings during month</td>
+									<td>% attending</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<!-- .row>.col-xs-3>strong{Prospective Elders}^.col-xs-9>table.table.table-condensed.table-borderless.table-no-bottom-margin>tbody>tr.table-col-4>td*4>.text-center.number-box{00} -->
+			</div>
+			<div class="col-xs-5">
+				<h4>Home Teaching</h4>
+				<div class="row">
+					<div class="col-xs-12">
+						<table class="table table-condensed table-borderless table-no-bottom-margin">
+							<tbody>
+								<tr class="table-col-4">
+									<td>
+										<div class="text-center number-box">{{model.familiesAssigned * 1}}</div>
+									</td>
+									<td>
+										<div class="text-center number-box">{{model.familiesNotAssigned * 1}}</div>
+									</td>
+									<td>
+										<div class="text-center number-box">{{model.familiesVisited * 1}}</div>
+									</td>
+									<td>
+										<div class="text-center number-box"><strong>{{(model.familiesVisited / model.familiesAssigned) * 100 | number: 0}}%</strong></div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<table class="table table-condensed table-borderless table-no-bottom-margin">
+							<tbody>
+								<tr class="table-col-4 micro-text">
+									<td>Familes assigned</td>
+									<td>Families not yet assigned</td>
+									<td>Total families visited</td>
+									<td>% visited</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<table class="table table-condensed table-borderless table-no-bottom-margin">
+							<tbody>
+								<tr class="table-col-4">
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+									<td>
+										<div class="text-center number-box"><strong>{{(model.familiesVisited / (model.familiesAssigned + model.familiesNotAssigned)) * 100 | number: 0}}%</strong></div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<table class="table table-condensed table-borderless table-no-bottom-margin">
+							<tbody>
+								<tr class="table-col-4 micro-text">
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+									<td>% visited out of All</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<table class="table table-condensed table-borderless table-no-bottom-margin">
+							<tbody>
+								<tr class="table-col-4">
+									<td>
+										<div class="text-center number-box">{{model.companionshipCount * 1}}</div>
+									</td>
+									<td>
+										<div class="text-center number-box">{{model.ppiCount * 1}}</div>
+									</td>
+									<td>&nbsp;</td>
+									<td>
+										<div class="text-center number-box"><strong>{{(model.ppiCount / model.companionshipCount) * 100 | number: 0}}%</strong></div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<table class="table table-condensed table-borderless table-no-bottom-margin">
+							<tbody>
+								<tr class="table-col-4 micro-text">
+									<td>Companionships</td>
+									<td>Face-to-face PPIs</td>
+									<td>&nbsp;</td>
+									<td>%PPIs<br />(%50 min)</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<!-- .row>.col-xs-12>table.table.table-condensed.table-borderless.table-no-bottom-margin>tbody>tr.table-col-4>td*4>.text-center.number-box{0} -->
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<hr class="lg" />
+			</div>
+		</div>
+	</div>
+	<script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.14.3/ui-bootstrap-tpls.min.js"></script> -->
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
