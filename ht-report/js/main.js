@@ -20,9 +20,9 @@ myApp.controller('htReportCtrl', ['$scope', function($scope) {
 		,familiesVisited: null
 		,companionshipCount: null
 		,ppiCount: null
-		,eldersNotAttendingList: null
-		,prospectiveElderList: null
-		,quorumPresidencyVisitsList: null
+		,eldersNotAttendingList: ''
+		,prospectiveElderList: ''
+		,quorumPresidencyVisitsList: ''
 		,familiesNotVisited: [
 			{ family: 'See attached list', homeTeachers: null }
 		]
@@ -31,6 +31,13 @@ myApp.controller('htReportCtrl', ['$scope', function($scope) {
 	$scope.eldersNotAttending = [];
 	$scope.prospectiveEldersProgressing = [];
 	$scope.presidencyVisits = [];
+
+	$scope.$watch('model', function (newVal, oldVal, scope) {
+		var jsonString = JSON.stringify($scope.model);
+		if (typeof jsonString === 'string') {
+			$scope.backupData = jsonString;
+		}
+	}, true);
 
 	$scope.$watch('model.eldersNotAttendingList', function (newVal, oldVal, scope) {
 		$scope.eldersNotAttending = newVal.split('\n');
@@ -66,7 +73,20 @@ myApp.controller('htReportCtrl', ['$scope', function($scope) {
 		}
 	};
 
-	// test
+	$scope.restoreData = function () {
+		if (typeof $scope.backupData === 'string') {
+			try {
+				var jsonData = JSON.parse($scope.backupData);
+				if (typeof jsonData === 'object') {
+					$scope.model = angular.copy(jsonData);
+				}
+			} catch (e) {
+				alert('The data you are trying to restore is corrupt.  Make sure the data is a properly formatted JSON string.');
+			}
+		}
+	};
+
+	/*// test
 	var testData = { elderCount: 78, elderAttend: 33, prospectiveElderCount: 2, prospectiveElderAttend: 0, familiesAssigned: 93, familiesNotAssigned: 3, familiesVisited: 42, companionshipCount: 24, ppiCount: 6
 		, eldersNotAttendingList: 'Mouse, Mickey\nBourne, Jason\nDoo, Scooby\nDickens, Charles\nFranklin, Ben\nBell, Alexander Graham', prospectiveElderList: 'Clause, Santa\nFrost, Jack'
 		, quorumPresidencyVisitsList: 'Washington, George\nCaptain Moroni\nGandhi' };
@@ -79,5 +99,5 @@ myApp.controller('htReportCtrl', ['$scope', function($scope) {
 		{ name: 'Family A', isMovingIn: true, info: 'Husband, Wife and 4 kids.', address: 'Sugar lane' }
 		,{ name: 'Person B', isMovingIn: false, info: 'moving to North Pole', address: '1 North Pole' }
 	];
-	angular.extend($scope.model, testData);
+	angular.extend($scope.model, testData);*/
 }]);
