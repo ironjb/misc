@@ -32,9 +32,41 @@
 .ht-report .table-borderless tr td {
   border: none;
 }
+.ht-report .table.underline-with-separator thead tr:last-child td,
+.ht-report .table.underline-with-separator tbody tr:last-child td {
+  border-bottom: 1px solid #dddddd;
+}
+.ht-report .table.underline-with-separator thead tr td.table-separator,
+.ht-report .table.underline-with-separator tbody tr td.table-separator,
+.ht-report .table.underline-with-separator thead tr th.table-separator,
+.ht-report .table.underline-with-separator tbody tr th.table-separator {
+  border-top: none;
+  border-bottom: none;
+}
+.ht-report .table.families-not-visited thead tr td.families-not-visited-col,
+.ht-report .table.families-not-visited tbody tr td.families-not-visited-col,
+.ht-report .table.families-not-visited thead tr th.families-not-visited-col,
+.ht-report .table.families-not-visited tbody tr th.families-not-visited-col {
+  width: 48%;
+}
+.ht-report .table.families-not-visited thead tr td.table-separator,
+.ht-report .table.families-not-visited tbody tr td.table-separator,
+.ht-report .table.families-not-visited thead tr th.table-separator,
+.ht-report .table.families-not-visited tbody tr th.table-separator {
+  width: 4%;
+}
+.ht-report .table.member-maintenace thead tr td.table-separator,
+.ht-report .table.member-maintenace tbody tr td.table-separator,
+.ht-report .table.member-maintenace thead tr th.table-separator,
+.ht-report .table.member-maintenace tbody tr th.table-separator {
+  width: 4px;
+}
 .underline {
   border-bottom: 2px solid #dddddd;
 }
 .micro-text {
   font-size: 0.6em;
+}
+.member-maintenance-in-out {
+  min-width: 60px;
 }

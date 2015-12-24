@@ -15,68 +15,156 @@
 			</div>
 			<form class="form-horizontal" data-ng-submit="formSubmit();">
 				<div class="form-group">
-					<label for="month" class="control-label col-xs-6">Month</label>
-					<div class="col-xs-3">
+					<label for="month" class="control-label col-sm-6">Month</label>
+					<div class="col-sm-3">
 						<select name="month" id="month" class="form-control" data-ng-model="model.month" data-ng-options="m for m in months"></select>
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="year" class="control-label col-xs-6">Year</label>
-					<div class="col-xs-3"><input type="number" class="form-control" id="year" name="year" data-ng-model="model.year" /></div>
+					<label for="year" class="control-label col-sm-6">Year</label>
+					<div class="col-sm-3"><input type="number" class="form-control" id="year" name="year" data-ng-model="model.year" /></div>
 				</div>
 				<div class="row">
-					<div class="col-xs-6 col-xs-offset-3">
+					<div class="col-sm-6 col-sm-offset-3">
+						<hr />
+					</div>
+				</div>
+				<!--
+				span.glyphicon.glyphicon-question-sign[popover-trigger=mouseenter popover-placement=left popover-append-to-body=true popover-title=title uib-popover=content]
+				-->
+				<div class="form-group">
+					<label for="elderCount" class="control-label col-sm-6">Total Number of Elders</label>
+					<div class="col-sm-3"><input type="number" class="form-control" id="elderCount" name="elderCount" data-ng-model="model.elderCount" /></div>
+				</div>
+				<div class="form-group">
+					<label for="elderAttend" class="control-label col-sm-6">Elders that attended</label>
+					<div class="col-sm-3"><input type="number" class="form-control" id="elderAttend" name="elderAttend" data-ng-model="model.elderAttend" /></div>
+				</div>
+				<div class="form-group">
+					<label for="prospectiveElderCount" class="control-label col-sm-6">Total Number of Prospective Elders</label>
+					<div class="col-sm-3"><input type="number" class="form-control" id="prospectiveElderCount" name="prospectiveElderCount" data-ng-model="model.prospectiveElderCount" /></div>
+				</div>
+				<div class="form-group">
+					<label for="prospectiveElderAttend" class="control-label col-sm-6">Prospective Elders that attended</label>
+					<div class="col-sm-3"><input type="number" class="form-control" id="prospectiveElderAttend" name="prospectiveElderAttend" data-ng-model="model.prospectiveElderAttend" /></div>
+				</div>
+				<div class="row">
+					<div class="col-sm-6 col-sm-offset-3">
 						<hr />
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="elderCount" class="control-label col-xs-6">Total Number of Elders</label>
-					<div class="col-xs-3"><input type="number" class="form-control" id="elderCount" name="elderCount" data-ng-model="model.elderCount" /></div>
+					<label for="familiesAssigned" class="control-label col-sm-6">Families Assigned</label>
+					<div class="col-sm-3"><input type="number" class="form-control" id="familiesAssigned" name="familiesAssigned" data-ng-model="model.familiesAssigned" /></div>
 				</div>
 				<div class="form-group">
-					<label for="elderAttend" class="control-label col-xs-6">Elders that attended</label>
-					<div class="col-xs-3"><input type="number" class="form-control" id="elderAttend" name="elderAttend" data-ng-model="model.elderAttend" /></div>
+					<label for="familiesNotAssigned" class="control-label col-sm-6">Families Not Assigned</label>
+					<div class="col-sm-3"><input type="number" class="form-control" id="familiesNotAssigned" name="familiesNotAssigned" data-ng-model="model.familiesNotAssigned" /></div>
 				</div>
 				<div class="form-group">
-					<label for="prospectiveElderCount" class="control-label col-xs-6">Total Number of Prospective Elders</label>
-					<div class="col-xs-3"><input type="number" class="form-control" id="prospectiveElderCount" name="prospectiveElderCount" data-ng-model="model.prospectiveElderCount" /></div>
-				</div>
-				<div class="form-group">
-					<label for="prospectiveElderAttend" class="control-label col-xs-6">Prospective Elders that attended</label>
-					<div class="col-xs-3"><input type="number" class="form-control" id="prospectiveElderAttend" name="prospectiveElderAttend" data-ng-model="model.prospectiveElderAttend" /></div>
+					<label for="familiesVisited" class="control-label col-sm-6">Families Visited</label>
+					<div class="col-sm-3"><input type="number" class="form-control" id="familiesVisited" name="familiesVisited" data-ng-model="model.familiesVisited" /></div>
 				</div>
 				<div class="row">
-					<div class="col-xs-6 col-xs-offset-3">
+					<div class="col-sm-6 col-sm-offset-3">
 						<hr />
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="familiesAssigned" class="control-label col-xs-6">Families Assigned</label>
-					<div class="col-xs-3"><input type="number" class="form-control" id="familiesAssigned" name="familiesAssigned" data-ng-model="model.familiesAssigned" /></div>
+					<label for="companionshipCount" class="control-label col-sm-6">Number of companionships</label>
+					<div class="col-sm-3"><input type="number" class="form-control" id="companionshipCount" name="companionshipCount" data-ng-model="model.companionshipCount" /></div>
 				</div>
 				<div class="form-group">
-					<label for="familiesNotAssigned" class="control-label col-xs-6">Families Not Assigned</label>
-					<div class="col-xs-3"><input type="number" class="form-control" id="familiesNotAssigned" name="familiesNotAssigned" data-ng-model="model.familiesNotAssigned" /></div>
-				</div>
-				<div class="form-group">
-					<label for="familiesVisited" class="control-label col-xs-6">Families Visited</label>
-					<div class="col-xs-3"><input type="number" class="form-control" id="familiesVisited" name="familiesVisited" data-ng-model="model.familiesVisited" /></div>
+					<label for="ppiCount" class="control-label col-sm-6">Number of PPIs</label>
+					<div class="col-sm-3"><input type="number" class="form-control" id="ppiCount" name="ppiCount" data-ng-model="model.ppiCount" /></div>
 				</div>
 				<div class="row">
-					<div class="col-xs-6 col-xs-offset-3">
+					<div class="col-sm-6 col-sm-offset-3">
 						<hr />
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="companionshipCount" class="control-label col-xs-6">Number of companionships</label>
-					<div class="col-xs-3"><input type="number" class="form-control" id="companionshipCount" name="companionshipCount" data-ng-model="model.companionshipCount" /></div>
+					<label for="eldersNotAttendingList" class="control-label col-sm-6">List of Elders not attending</label>
+					<div class="col-sm-6 col-md-3"><textarea name="eldersNotAttendingList" id="eldersNotAttendingList" rows="5" class="form-control" data-ng-model="model.eldersNotAttendingList" ng-model-options="delayUpdate" placeholder="{{listPlaceholder}}"></textarea></div>
 				</div>
 				<div class="form-group">
-					<label for="ppiCount" class="control-label col-xs-6">Number of PPIs</label>
-					<div class="col-xs-3"><input type="number" class="form-control" id="ppiCount" name="ppiCount" data-ng-model="model.ppiCount" /></div>
+					<label for="prospectiveElderList" class="control-label col-sm-6">List of Prospective Elders progressing toward ordination</label>
+					<div class="col-sm-6 col-md-3"><textarea name="prospectiveElderList" id="prospectiveElderList" rows="5" class="form-control" data-ng-model="model.prospectiveElderList" ng-model-options="delayUpdate" placeholder="{{listPlaceholder}}"></textarea></div>
 				</div>
+				<div class="form-group">
+					<label for="quorumPresidencyVisitsList" class="control-label col-sm-6">Quorum Presidency Visits</label>
+					<div class="col-sm-6 col-md-3"><textarea name="quorumPresidencyVisitsList" id="quorumPresidencyVisitsList" rows="5" class="form-control" data-ng-model="model.quorumPresidencyVisitsList" ng-model-options="delayUpdate" placeholder="{{listPlaceholder}}"></textarea></div>
+				</div>
+				<div class="row">
+					<div class="col-sm-6 col-sm-offset-3">
+						<hr />
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h3 class="panel-title">Families not visited by Home Teachers</h3>
+							</div>
+							<div class="panel-body">
+								<table class="table table-responsive table-condensed">
+									<thead>
+										<tr>
+											<th>Family Not Visited</th>
+											<th>Their Home Teachers</th>
+											<th class="text-right">Remove</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr data-ng-repeat="fnv in model.familiesNotVisited track by $index">
+											<td><input type="text" class="form-control" data-ng-model="fnv.family" placeholder="Add Family Name" /></td>
+											<td><input type="text" class="form-control" data-ng-model="fnv.homeTeachers" placeholder="Add Home Teachers" /></td>
+											<td class="text-right"><button class="btn btn-danger" type="button" data-ng-click="removeFamilyNotVisited($index);" tabindex="-1"><span class="glyphicon glyphicon-trash"></span></button></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="panel-footer">
+								<button class="btn btn-primary" type="button" data-ng-click="addFamilyNotVisited();">Add Family</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h3 class="panel-title">Membership Record Maintenance</h3>
+							</div>
+							<div class="panel-body">
+								<table class="table table-responsive table-condensed">
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th class="member-maintenance-in-out">In/Out</th>
+											<th>Info</th>
+											<th>New Address</th>
+											<th class="text-right">Remove</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr data-ng-repeat="mmr in model.memberMaintenance track by $index">
+											<td><input type="text" class="form-control" data-ng-model="mmr.name" placeholder="Name" /></td>
+											<td><div class="checkbox"><label><input type="checkbox" data-ng-model="mmr.isMovingIn"><span data-ng-if="mmr.isMovingIn">In</span><span data-ng-if="!mmr.isMovingIn">Out</span></input></label></div></td>
+											<td><input type="text" class="form-control" data-ng-model="mmr.info" placeholder="Info" /></td>
+											<td><input type="text" class="form-control" data-ng-model="mmr.address" placeholder="Address" /></td>
+											<td class="text-right"><button class="btn btn-danger" type="button" tabindex="-1" data-ng-click="removeMemberMaintenance($index);"><span class="glyphicon glyphicon-trash"></span></button></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="panel-footer"><button class="btn btn-primary" type="button" data-ng-click="addMemberMaintenance();">Add Member Maintenance Record</button></div>
+						</div>
+					</div>
+				</div>
+				.row>.col-sm-12
 				<!-- .form-group>label.control-label.col-xs-6[for=elderCount]{elderCount}+.col-xs-3>input.form-control#elderCount[type=number name=elderCount data-ng-model=model.elderCount] -->
-				<pre>{{model}}</pre>
+				<!-- <pre>{{model}}</pre> -->
 			</form>
 		</div>
 		<div class="row">
@@ -108,11 +196,7 @@
 				<div class="small text-center">Year</div>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-xs-12">
-				<hr class="lg" />
-			</div>
-		</div>
+		<div class="row"><div class="col-xs-12"><hr class="lg" /></div></div>
 		<div class="row">
 			<div class="col-xs-7">
 				<h4>Priesthood Meeting Attendance</h4>
@@ -283,16 +367,90 @@
 				<!-- .row>.col-xs-12>table.table.table-condensed.table-borderless.table-no-bottom-margin>tbody>tr.table-col-4>td*4>.text-center.number-box{0} -->
 			</div>
 		</div>
+		<div class="row"><div class="col-xs-12"><hr class="lg" /></div></div>
 		<div class="row">
-			<div class="col-xs-12">
-				<hr class="lg" />
+			<div class="col-xs-7">
+				<div class="row">
+					<div class="col-xs-6">
+						<h5>Those not attending any Priesthood mtgs</h5>
+						<ul class="list-unstyled">
+							<li class="underline" data-ng-repeat="e in eldersNotAttending | orderBy : '+' track by $index">{{e}}</li>
+						</ul>
+					</div>
+					<div class="col-xs-6">
+						<h5>Prospective Elders progressing toward ordination</h5>
+						<ul class="list-unstyled">
+							<li class="underline" data-ng-repeat="e in prospectiveEldersProgressing | orderBy : '+' track by $index">{{e}}</li>
+						</ul>
+						<br /><br />
+						<h5>Quorum Presidency visits</h5>
+						<ul class="list-unstyled">
+							<li class="underline" data-ng-repeat="e in presidencyVisits | orderBy : '+' track by $index">{{e}}</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-5">
+				<h5>Families not visited by Home Teachers</h5>
+				<table class="table table-responsive table-condensed underline-with-separator families-not-visited small">
+					<thead>
+						<tr>
+							<th class="families-not-visited-col">Families not visited</th>
+							<th class="table-separator">&nbsp;</th>
+							<th class="families-not-visited-col">Their Home Teachers</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr data-ng-repeat="fnv in model.familiesNotVisited track by $index">
+							<td>{{fnv.family}}</td>
+							<td class="table-separator">&nbsp;</td>
+							<td>{{fnv.homeTeachers}}</td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
 		</div>
+		<div class="row"><div class="col-xs-12"><hr class="lg" /></div></div>
+		<div class="row">
+			<div class="col-xs-12">
+				<h4>Membership Record Maintenance</h4>
+				<table class="table table-responsive table-condensed underline-with-separator member-maintenace small">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th class="table-separator">&nbsp;</th>
+							<th>In/Out</th>
+							<th class="table-separator">&nbsp;</th>
+							<th>Info</th>
+							<th class="table-separator">&nbsp;</th>
+							<th>New Address</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr data-ng-repeat="mmr in model.memberMaintenance | orderBy : name track by $index">
+							<td>{{mmr.name}}</td>
+							<td class="table-separator">&nbsp;</td>
+							<td><span data-ng-if="mmr.isMovingIn">In</span><span data-ng-if="!mmr.isMovingIn">Out</span></td>
+							<td class="table-separator">&nbsp;</td>
+							<td>{{mmr.info}}</td>
+							<td class="table-separator">&nbsp;</td>
+							<td>{{mmr.address}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="hidden-print">
+			<br />
+			<br />
+			<br />
+			<br />
+		</div>
 	</div>
-	<script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
+	<script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
-	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.14.3/ui-bootstrap-tpls.min.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.14.3/ui-bootstrap-tpls.min.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

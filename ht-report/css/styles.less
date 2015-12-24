@@ -53,6 +53,54 @@
 			}
 		}
 	}
+
+	.table.underline-with-separator {
+		thead, tbody {
+			tr {
+				&:last-child td {
+					border-bottom: 1px solid @borderColor;
+				}
+				td, th {
+					&.table-separator {
+						border-top: none;
+						border-bottom: none;
+					}
+				}
+			}
+		}
+	}
+
+	.table.families-not-visited {
+		thead, tbody {
+			tr {
+				// &:last-child td {
+				// 	border-bottom: 1px solid @borderColor;
+				// }
+				td, th {
+					//border-bottom: 2px solid @borderColor;
+					&.families-not-visited-col {
+						width:48%;
+					}
+
+					&.table-separator {
+						width: 4%;
+					}
+				}
+			}
+		}
+	}
+
+	.table.member-maintenace {
+		thead, tbody {
+			tr {
+				td, th {
+					&.table-separator {
+						width: 4px;
+					}
+				}
+			}
+		}
+	}
 }
 
 .underline {
@@ -61,4 +109,8 @@
 
 .micro-text {
 	font-size: 0.6em;
+}
+
+.member-maintenance-in-out {
+	min-width: 60px;
 }
