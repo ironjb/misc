@@ -47,22 +47,35 @@
 					</div>
 				</div>
 				<!--
-				span.glyphicon.glyphicon-question-sign[popover-trigger=mouseenter popover-placement=left popover-append-to-body=true popover-title=title uib-popover=content]
+						span.glyphicon.glyphicon-question-sign[popover-trigger=mouseenter popover-placement=top popover-append-to-body=true popover-title=title uib-popover-template="'TemplateName'"]
 				-->
+
 				<div class="form-group">
-					<label for="elderCount" class="control-label col-sm-6">Total Number of Elders</label>
+					<label for="elderCount" class="control-label col-sm-6">
+						<span class="glyphicon glyphicon-question-sign" popover-trigger="mouseenter" popover-append-to-body="true" popover-title="Total Number of Elders" uib-popover-template="'elderCount'"></span>
+						Total Number of Elders
+					</label>
 					<div class="col-sm-3"><input type="number" class="form-control" id="elderCount" name="elderCount" data-ng-model="model.elderCount" /></div>
 				</div>
 				<div class="form-group">
-					<label for="elderAttend" class="control-label col-sm-6">Elders that attended</label>
+					<label for="elderAttend" class="control-label col-sm-6">
+						<span class="glyphicon glyphicon-question-sign" popover-trigger="mouseenter" popover-append-to-body="true" popover-title="Elders That Attended" uib-popover-template="'elderAttend'"></span>
+						Elders that attended
+					</label>
 					<div class="col-sm-3"><input type="number" class="form-control" id="elderAttend" name="elderAttend" data-ng-model="model.elderAttend" /></div>
 				</div>
 				<div class="form-group">
-					<label for="prospectiveElderCount" class="control-label col-sm-6">Total Number of Prospective Elders</label>
+					<label for="prospectiveElderCount" class="control-label col-sm-6">
+						<span class="glyphicon glyphicon-question-sign" popover-trigger="mouseenter" popover-placement="top" popover-append-to-body="true" popover-title="Total Number of Prospective Elders" uib-popover-template="'prospectiveElderCount'"></span>
+						Total Number of Prospective Elders
+					</label>
 					<div class="col-sm-3"><input type="number" class="form-control" id="prospectiveElderCount" name="prospectiveElderCount" data-ng-model="model.prospectiveElderCount" /></div>
 				</div>
 				<div class="form-group">
-					<label for="prospectiveElderAttend" class="control-label col-sm-6">Prospective Elders that attended</label>
+					<label for="prospectiveElderAttend" class="control-label col-sm-6">
+						<span class="glyphicon glyphicon-question-sign" popover-trigger="mouseenter" popover-placement="top" popover-append-to-body="true" popover-title="Prospective Elders That Attended" uib-popover-template="'prospectiveElderAttend'"></span>
+						Prospective Elders that attended
+					</label>
 					<div class="col-sm-3"><input type="number" class="form-control" id="prospectiveElderAttend" name="prospectiveElderAttend" data-ng-model="model.prospectiveElderAttend" /></div>
 				</div>
 				<div class="row">
@@ -71,16 +84,25 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="familiesAssigned" class="control-label col-sm-6">Families Assigned</label>
+					<label for="familiesAssigned" class="control-label col-sm-6">
+						<span class="glyphicon glyphicon-question-sign" popover-trigger="mouseenter" popover-placement="top" popover-append-to-body="true" popover-title="Families Assigned" uib-popover-template="'familiesAssigned'"></span>
+						Families Assigned
+					</label>
 					<div class="col-sm-3"><input type="number" class="form-control" id="familiesAssigned" name="familiesAssigned" data-ng-model="model.familiesAssigned" /></div>
 				</div>
 				<div class="form-group">
-					<label for="familiesNotAssigned" class="control-label col-sm-6">Families Not Assigned</label>
-					<div class="col-sm-3"><input type="number" class="form-control" id="familiesNotAssigned" name="familiesNotAssigned" data-ng-model="model.familiesNotAssigned" /></div>
+					<label for="familiesVisited" class="control-label col-sm-6">
+						<span class="glyphicon glyphicon-question-sign" popover-trigger="mouseenter" popover-placement="top" popover-append-to-body="true" popover-title="Families Visited" uib-popover-template="'familiesVisited'"></span>
+						Families Visited
+					</label>
+					<div class="col-sm-3"><input type="number" class="form-control" id="familiesVisited" name="familiesVisited" data-ng-model="model.familiesVisited" /></div>
 				</div>
 				<div class="form-group">
-					<label for="familiesVisited" class="control-label col-sm-6">Families Visited</label>
-					<div class="col-sm-3"><input type="number" class="form-control" id="familiesVisited" name="familiesVisited" data-ng-model="model.familiesVisited" /></div>
+					<label for="familiesNotAssigned" class="control-label col-sm-6">
+						<span class="glyphicon glyphicon-question-sign" popover-trigger="mouseenter" popover-placement="top" popover-append-to-body="true" popover-title="Families Not Assigned" uib-popover-template="'familiesNotAssigned'"></span>
+						Families Not Assigned
+					</label>
+					<div class="col-sm-3"><input type="number" class="form-control" id="familiesNotAssigned" name="familiesNotAssigned" data-ng-model="model.familiesNotAssigned" /></div>
 				</div>
 				<div class="row">
 					<div class="col-sm-6 col-sm-offset-3">
@@ -88,11 +110,17 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="companionshipCount" class="control-label col-sm-6">Number of companionships</label>
+					<label for="companionshipCount" class="control-label col-sm-6">
+						<span class="glyphicon glyphicon-question-sign" popover-trigger="mouseenter" popover-placement="top" popover-append-to-body="true" popover-title="Number of Companionships" uib-popover-template="'companionshipCount'"></span>
+						Number of companionships
+					</label>
 					<div class="col-sm-3"><input type="number" class="form-control" id="companionshipCount" name="companionshipCount" data-ng-model="model.companionshipCount" /></div>
 				</div>
 				<div class="form-group">
-					<label for="ppiCount" class="control-label col-sm-6">Number of PPIs</label>
+					<label for="ppiCount" class="control-label col-sm-6">
+						<span class="glyphicon glyphicon-question-sign" popover-trigger="mouseenter" popover-placement="top" popover-append-to-body="true" popover-title="Number of PPIs" uib-popover-template="'ppiCount'"></span>
+						Number of PPIs
+					</label>
 					<div class="col-sm-3"><input type="number" class="form-control" id="ppiCount" name="ppiCount" data-ng-model="model.ppiCount" /></div>
 				</div>
 				<div class="row">

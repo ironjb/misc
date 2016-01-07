@@ -101,3 +101,63 @@ myApp.controller('htReportCtrl', ['$scope', function($scope) {
 	];
 	angular.extend($scope.model, testData);*/
 }]);
+
+// Templates
+myApp.run(['$templateCache', function ($templateCache) {
+	$templateCache.put('elderCount', [
+		'<div>',
+		'	Total Number of Elders can be found by going to <strong>Organizations &gt; Elders Quorum</strong>. Scroll to the bottom of the list to find the number of Elders',
+		'</div>',
+	''].join('\n'));
+	$templateCache.put('elderAttend', [
+		'<div>',
+		'	Count the number from the <strong>Attendance Role</strong> (Don\'t forget the Elders from Primary, YM, etc...)',
+		'</div>',
+	''].join('\n'));
+	$templateCache.put('prospectiveElderCount', [
+		'<div>',
+		'	From Bishop???',
+		'</div>',
+	''].join('\n'));
+	$templateCache.put('prospectiveElderAttend', [
+		'<div>',
+		'	Count the number from the <strong>Attendance Role</strong>',
+		'</div>',
+	''].join('\n'));
+	$templateCache.put('familiesAssigned', [
+		'<div>',
+		'	The best way to get this number:',
+		'	<ul>',
+		'		<li>Go to <strong>Organizations &gt; Home and Visiting Teaching</strong>.</li>',
+		'		<li>Select the <strong>Overview</strong> tab.</li>',
+		'		<li>Click the <strong>Totals</strong> button on the right side (as opposed to <strong>Percentages</strong>).</li>',
+		'		<li>To the right of <strong>Elder Visits</strong> you will see numbers like <strong>XX/XX</strong>. Use the number on the right (XX/<strong>XX</strong>).</li>',
+		'	</ul>',
+		'</div>',
+	''].join('\n'));
+	$templateCache.put('familiesVisited', [
+		'<div>',
+		'	Use the same steps from <strong>Families Assigned</strong>, except in the last step, use number on the left (<strong>XX</strong>/XX).',
+		'</div>',
+	''].join('\n'));
+	$templateCache.put('familiesNotAssigned', [
+		'<div>',
+		'	On the <strong>Overview</strong> tab, use the number to the right of <strong>Households Not Assigned to be Home Taught</strong>',
+		'</div>',
+	''].join('\n'));
+	$templateCache.put('companionshipCount', [
+		'<div>',
+		'	Go to the <strong>Companionships</strong> tab. Just below each District it shows the number of Companionships for that District. Get this number for each District and add them up.',
+		'</div>',
+	''].join('\n'));
+	$templateCache.put('ppiCount', [
+		'<div>',
+		'	Get this number from each District Leader.',
+		'</div>',
+	''].join('\n'));
+	$templateCache.put('tmpl', [
+		'<div>',
+		'	',
+		'</div>',
+	''].join('\n'));
+}]);
