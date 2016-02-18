@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Marked in the browser</title>
+	<script src="js/marked.js"></script>
+<style>
+body {margin: 0 0 200px 0;}
+/* ================================== Mac like Bottom Stuff ================================== */
+.mc {background-color: #fff; position: fixed; bottom:0; width:100%; border-top:1px solid #369; border-bottom:5px solid #369; }
+.tContainer { text-align: center; position:relative; }
+.tBlock { display: inline-block; color: #fff; width: 100px; line-height: 100px; margin: 10px 2px; margin-top: 20px; background-color: #369; text-align: center; position:relative; top:0;
+	transition: padding .2s, width .2s, line-height .2s, margin .2s, top .2s, font .2s; }
+.tBlock:hover, .tBlock.active { width: 120px; padding:10px 0; /*margin: 10px;*/ margin-top:0; margin-bottom:0; top:-6px; /*line-height: 120px;*/ font-size: 1.6em; }
+
+/*.mc {background-color: #bbb}
+.tContainer { text-align: center; position:relative; }
+.tBlock { display: inline-block; width: 100px; line-height: 100px; margin: 8px; margin-top: 20px; background-color: #aad; text-align: center; position:relative; top:0;
+	transition: padding .5s, width .5s, line-height .5s, margin .5s, top .5s, font .5s; }
+.tBlock:hover { width: 120px;  line-height: 120px; margin-top:0; top:-8px; font-size: 1.6em; }*/
+
+/*.tBlock { display: inline-block; width: 100px; line-height: 100px; margin: 8px; margin-top: 20px; background-color: #aad; text-align: center; transition: padding .2s, width .2s, margin .2s; }
+.tBlock:hover { padding-top: 20px; margin-top: 0; width: 120px; }*/
+
+/*.tBlock { display: inline-block; width: 100px; line-height: 100px; margin:8px; margin-top:20px; background-color:#cba; text-align: center; transition: padding .2s, width .2s, margin .2s, transform .2s;}
+.tBlock:hover { transform: scale(1.5,1.5); }*/
+
+
+
+/* ================================== Image Flips ================================== */
+.flip-container { margin 0 auto; text-align: center; }
+.flip-container img {transition: transform .2s; transform: rotateY(70deg);}
+.flip-container img:hover { transform: rotateY(0deg);}
+</style>
+</head>
+<body>
+	<div style="padding:20px">
+		<a href="/ConstructionProjectNotes2.md">ConstructionProjectNotes2.md</a><br />
+		<a href="/IgcConstructionVisualStudioSetup.md">IgcConstructionVisualStudioSetup.md</a><br />
+		<a href="/IgcConstruction-VisualStudio-Database-Connection.md">IgcConstruction-VisualStudio-Database-Connection.md</a><br />
+		<div id="content"></div>
+		<script>
+			document.getElementById('content').innerHTML =
+				marked('# Marked in browser\n\nRendered by **marked**.');
+		</script>
+		<hr />
+		<div class="flip-container">
+			<img src="http://dummyimage.com/100x100/336699/fff" alt="" />
+			<img src="http://dummyimage.com/100x100/336699/fff" alt="" />
+			<img src="http://dummyimage.com/100x100/336699/fff" alt="" />
+			<img src="http://dummyimage.com/100x100/336699/fff" alt="" />
+			<img src="http://dummyimage.com/100x100/336699/fff" alt="" />
+			<img src="http://dummyimage.com/100x100/336699/fff" alt="" />
+			<img src="http://dummyimage.com/100x100/336699/fff" alt="" />
+			<img src="http://dummyimage.com/100x100/336699/fff" alt="" />
+			<img src="http://dummyimage.com/100x100/336699/fff" alt="" />
+			<img src="http://dummyimage.com/100x100/336699/fff" alt="" />
+			<img src="http://dummyimage.com/100x100/336699/fff" alt="" />
+			<img src="http://dummyimage.com/100x100/336699/fff" alt="" />
+			<img src="http://dummyimage.com/100x100/336699/fff" alt="" />
+			<img src="http://dummyimage.com/100x100/336699/fff" alt="" />
+			<img src="http://dummyimage.com/100x100/336699/fff" alt="" />
+			<img src="http://dummyimage.com/100x100/336699/fff" alt="" />
+		</div>
+	</div>
+	<div class="mc">
+		<div class="tContainer">
+			<div class="tBlock">abc123</div>
+			<div class="tBlock">abc123</div>
+			<div class="tBlock">abc123</div>
+			<div class="tBlock">abc123</div>
+			<div class="tBlock">abc123</div>
+			<div class="tBlock">abc123</div>
+			<div class="tBlock">abc123</div>
+		</div>
+	</div>
+</body>
+</html>

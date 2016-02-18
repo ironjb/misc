@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+	<title>A directive on a select tag with ng-options</title>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+	<script>
+angular.module('myApp', [])
+.controller('myCtrl', ['$scope',function($scope){
+	//window.console.log && console.log('ctrl');
+	$scope.colors = [
+		{name:'black', shade:'dark'},
+		{name:'blue', shade:'dark'},
+		{name:'green', shade:'dark'},
+		{name:'yellow', shade:'light'},
+		{name:'pink', shade:'light'}
+	];
+}])
+.directive('myDynamicName',[function(){
+	return {
+		restrict: 'A',
+		priority: 1,
+		require: ['ngModel'],
+		link: function(scope, elem, attrs, ngModelCtrl) {
+			window.console.log && console.log('myDirective for...\t\t\t\t\t' + attrs.myDynamicName);
+			elem[0].name = attrs.myDynamicName;
+			ngModelCtrl[0].$name = attrs.myDynamicName;
+		}
+	}
+}])
+.directive('myOtherDirective',[function(){
+	return {
+		restrict: 'A',
+		priority: 2,
+		require: ['ngModel'],
+		link: function(scope, elem, attrs, ngModelCtrl) {
+			var elementName = elem[0].name;
+			if (!elementName) {
+				window.console.log && console.log('I need the element to have a name.');
+			} else {
+				window.console.log && console.log('We\'re set.  We\'ve got a name...\t\t\t' + elementName);
+			}
+		}
+	}
+}]);
+	</script>
+</head>
+<body>
+	<div data-ng-app="myApp" data-ng-controller="myCtrl">
+		<select  data-my-dynamic-name="selectTest" data-my-other-directive data-ng-options="color.name for color in colors" data-ng-model="selectedColor">
+			<option value="">Select a color:</option>
+		</select>
+		<div data-my-dynamic-name="divTest" data-my-other-directive data-ng-model="testScopeVar"></div>
+		<br />
+		Color: {{selectedColor.name}}<br />
+		Shade: {{selectedColor.shade}}
+	</div>
+</body>
+</html>
