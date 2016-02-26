@@ -1,0 +1,29 @@
+{
+  "name": "markdownNode",
+  "version": "0.0.1",
+  "description": "node server with markdown",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ironjb/misc.git"
+  },
+  "keywords": [
+    "node",
+    "markdown"
+  ],
+  "author": "Joe Bell",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ironjb/misc/issues"
+  },
+  "homepage": "https://github.com/ironjb/misc",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-bowercopy": "^1.2.4",
+    "grunt-contrib-copy": "^0.8.2",
+    "marked": "^0.3.5"
+  }
+}

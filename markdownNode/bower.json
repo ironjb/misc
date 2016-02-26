@@ -1,0 +1,22 @@
+{
+  "name": "markdownNode",
+  "version": "0.0.1",
+  "homepage": "https://github.com/ironjb/misc",
+  "authors": [
+    "Joe Bell <joe.bell@mdu.com>"
+  ],
+  "description": "node server with markdown",
+  "main": "index.html",
+  "keywords": [
+    "node",
+    "markdown"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

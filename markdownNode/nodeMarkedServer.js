@@ -5,6 +5,15 @@ var http = require("http"),
 		port = process.argv[2] || 8888;
 		marked = require('marked');
 
+// // Async highlighting with pygmentize-bundled
+// marked.setOptions({
+// 	highlight: function (code, lang, callback) {
+// 		require('pygmentize-bundled')({ lang: lang, format: 'html' }, code, function (err, result) {
+// 			callback(err, result.toString());
+// 		});
+// 	}
+// });
+
 http.createServer(function(request, response) {
 
 	var uri = url.parse(request.url).pathname
@@ -28,7 +37,7 @@ http.createServer(function(request, response) {
 		if (fs.statSync(filename).isDirectory()) filename += '/index.html';
 
 		fs.readFile(filename, "binary", function(err, file) {
-			if(err) {        
+			if(err) {
 				response.writeHead(500, {"Content-Type": "text/plain"});
 				response.write(err + "\n");
 				response.end();
