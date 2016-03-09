@@ -1,4 +1,16 @@
-#MongoDB
+# MongoDB
+
+## Notes, links, etc.
+
+https://docs.mongodb.org/getting-started/shell/
+
+After install, in order to allow remote connections, you need to update the **bindIp** property in the **mongod.config** file. (Located at **/etc/mongod.config** in Linux)
+
+Log file (Located at **/var/log/mongodb/mongod.log** in Linux)
+
+To run an instance of MongoDB without install use the tar version https://docs.mongodb.org/getting-started/shell/tutorial/install-mongodb-on-linux/
+
+## Using mongo
 
 Import Data
 
@@ -111,7 +123,7 @@ db.COLLECTIONNAME.remove(
 	{ "searchKey", "searchValue" },
 
 	//Provide _justOne_ to only affect one of the matching documents.
-	{  justOne: true }
+	{ justOne: true }
 )
 ```
 
@@ -125,4 +137,29 @@ Drop a collection
 
 ```
 db.COLLECTIONNAME.drop()
+```
+
+Data Aggregation
+
+```
+db.collection.aggregate( [ <stage1>, <stage2>, ... ] )
+```
+
+```
+
+```
+db.restaurants.aggregate(
+	[
+		{ $group: { "_id": "$borough", "count": { $sum: 1 } } }
+	]
+);
+```
+
+```
+db.restaurants.aggregate(
+	[
+		{ $match: { "borough": "Queens", "cuisine": "Brazilian" } },
+		{ $group: { "_id": "$address.zipcode" , "count": { $sum: 1 } } }
+	]
+);
 ```
