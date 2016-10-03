@@ -1,0 +1,25 @@
+<form class="form-horizontal" data-ng-submit="submit();">
+	<div class="modal-content">
+		<div class="modal-header">Modal</div>
+		<div class="modal-body">
+			<div class="form-group">
+				<div class="col-sm-8">
+					<ui-select data-ng-model="data.state">
+						<ui-select-match placeholder="Select or search from the list...">{{$select.selected.name}}</ui-select-match>
+						<ui-select-choices data-repeat="state.abbreviation as state in stateList | filter: $select.search">
+							<div data-ng-bind-html="state.name | highlight: $select.search"></div>
+						</ui-select-choices>
+					</ui-select>
+				</div>
+				<div class="col-sm-4">
+					<div class="form-control-static">{{data.state}}</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<div class="form-group">
+				<div class="col-sm-12"><button class="btn btn-primary" type="submit">OK</button><button class="btn btn-danger" type="button" data-ng-click="cancel();">Cancel</button></div>
+			</div>
+		</div>
+	</div>
+</form>
