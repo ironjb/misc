@@ -37,9 +37,26 @@
 		@media print {
 			body { margin: 0px; }
 		}
+		@media screen {
+			body {
+				margin: 20px 0;
+			}
+			.container-fluid {
+				max-width: 900px;
+			}
+		}
 	</style>
 </head>
 <body>
+	<div class="hidden-print">
+		<div class="container-fluid">
+			<div class="alert alert-warning">
+				<h3>NOTE: I recommend printing this from the Google Chrome browser.</h3>
+				<p>Make sure Headers and Footers are turned off.</p>
+				<p>Don't worry, this top section won't show up when you print.</p>
+			</div>
+		</div>
+	</div>
 	<div id="ReForm">
 		<div class="container-fluid">
 			<form class="form-horizontal">
