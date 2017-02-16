@@ -13,13 +13,13 @@
 			<div class="jumbotron">
 				<h2>Elders Quorum Home Teaching Report</h2>
 			</div>
-			<div class="alert alert-warning">
+			<div class="alert alert-info">
 				Things to note:
 				<ul>
-					<li>I recommned using the <strong>Google Chrome</strong> browser to print off this report.  It is easy to turn off 'Headers and Footers' and also makes it easy to print in PDF format.</li>
+					<!--<li>I recommned using the <strong>Google Chrome</strong> browser to print off this report.  It is easy to turn off 'Headers and Footers' and also makes it easy to print in PDF format.</li>-->
 					<li>You will use <strong>LCR (Leader and Clerk Resources)</strong> for much of the Home Teaching Reporting</li>
-					<li>To get to <strong>LCR</strong>, go to <a href="http://www.lds.org/lcr" target="_blank">www.lds.org/lcr</a> and sign in.</li>
-					<li>Once you are finished entering all the data for the HT Report, just print like you normally would from the browser (Using Ctrl+P for instance).</li>
+					<li>To get to <strong>LCR</strong>, go to <strong><a href="http://www.lds.org" target="_blank">lds.org</a></strong>, click on <strong>My Account</strong>, click <strong>Leader and Clerk Resources</strong> and sign in. You can also use this link to get right into LCR: <strong><a href="http://www.lds.org/lcr" target="_blank">lds.org/lcr</a></strong></li>
+					<li><strong>Printing:</strong> Once you are finished entering all the data for the HT Report, just print like you normally would from the browser (Using Ctrl+P for instance). You <em>should</em> be able to print to <strong>PDF</strong> instead of a printer. This way you can email the report. (You also probably want to turn off <em>Headers and Footers</em> in the print dialog.)</li>
 				</ul>
 			</div>
 			<form class="form-horizontal" data-ng-submit="formSubmit();">
@@ -39,6 +39,10 @@
 							</div>
 						</div>
 					</div>
+				</div>
+				<div class="form-group">
+					<label for="wardName" class="control-label col-sm-6">Ward Name</label>
+					<div class="col-sm-3"><input type="text" class="form-control" id="wardName" name="wardName" data-ng-model="model.wardName" data-ng-blur="wardNameUpdate();" placeholder="Enter the name of your ward" /></div>
 				</div>
 				<div class="form-group">
 					<label for="month" class="control-label col-sm-6">
@@ -248,7 +252,7 @@
 			<div class="col-xs-6 text-center">
 				<h2>Elder's Quorum</h2>
 			</div>
-			<div class="col-xs-3 text-right">Nampa 6th Ward</div>
+			<div class="col-xs-3 text-right">{{model.wardName}}</div>
 		</div>
 		<div class="row">
 			<div class="col-xs-4 col-xs-offset-2">

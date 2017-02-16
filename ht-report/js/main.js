@@ -5,11 +5,13 @@ myApp.controller('htReportCtrl', ['$scope', function($scope) {
 	var prevMonthYear = (prevMonth === 11) ? currentDate.getFullYear() - 1 : currentDate.getFullYear();
 	var familyNotVisitedTemplate = { family: null, homeTeachers: null };
 	var memberMaintenanceTemplate = { name: null, isMovingIn: false, info: null, address: null };
+	var wardNameLocalStr = localStorage.wardName || null;
 	$scope.listPlaceholder = 'Hit "Enter" after each name.';
 	$scope.delayUpdate = { updateOn: 'default blur', debounce: { 'default': 1000, 'blur': 0 } };
 	$scope.months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 	$scope.model = {
-		month: $scope.months[prevMonth]
+		wardName: wardNameLocalStr
+		, month: $scope.months[prevMonth]
 		,year: prevMonthYear
 		,elderCount: null
 		,elderAttend: null
@@ -50,6 +52,16 @@ myApp.controller('htReportCtrl', ['$scope', function($scope) {
 	$scope.$watch('model.quorumPresidencyVisitsList', function (newVal, oldVal, scope) {
 		$scope.presidencyVisits = newVal.split('\n');
 	});
+
+	$scope.wardNameUpdate = function () {
+		if ($scope.model.wardName) {
+			localStorage.wardName = $scope.model.wardName;
+			//console.log(localStorage);
+		} else {
+			localStorage.removeItem('wardName');
+			//console.log(localStorage);
+		}
+	};
 
 	$scope.addFamilyNotVisited = function () {
 		$scope.model.familiesNotVisited.push(angular.copy(familyNotVisitedTemplate));
