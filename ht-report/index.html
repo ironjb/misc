@@ -11,7 +11,15 @@
 	<div class="container ht-report" data-ng-app="app" data-ng-controller="htReportCtrl">
 		<div class="hidden-print">
 			<div class="jumbotron">
-				<h2>Elders Quorum Report</h2>
+				<h2>Elders Quorum Home Teaching Report</h2>
+			</div>
+			<div class="alert alert-warning">
+				Things to note:
+				<ul>
+					<li>I recommned using the <strong>Google Chrome</strong> browser to print off this report.  It is easy to turn off 'Headers and Footers' and also makes it easy to print in PDF format.</li>
+					<li>You will use <strong>LCR (Leader and Clerk Resources)</strong> for much of the Home Teaching Reporting</li>
+					<li>To get to <strong>LCR</strong>, go to <a href="http://www.lds.org/lcr" target="_blank">www.lds.org/lcr</a> and sign in.</li>
+				</ul>
 			</div>
 			<form class="form-horizontal" data-ng-submit="formSubmit();">
 				<div class="row">
@@ -21,8 +29,8 @@
 								<h3 class="panel-title">Backup JSON data</h3>
 							</div>
 							<div class="panel-body">
-								<p><strong>To Back Up:</strong> Click in the box below. All the text should automatically be selected. Copy the text to some other location.</p>
-								<p><strong>To Restore Backup:</strong> Paste the backed up text into the box below and the click the <strong>Restore Data</strong> button below.</p>
+								<p><strong>To Back Up:</strong> Click in the box below. All the text should automatically be selected. Copy the text to some other location (like a text file).</p>
+								<p><strong>To Restore Backup:</strong> Paste the text you previouscly backed up into the box below and the click the <strong>Restore Data</strong> button below.</p>
 								<p><textarea name="backup" id="backup" cols="30" rows="10" class="form-control" data-ng-model="backupData" onclick="this.select();"></textarea></p>
 							</div>
 							<div class="panel-footer">
@@ -32,7 +40,10 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="month" class="control-label col-sm-6">Month</label>
+					<label for="month" class="control-label col-sm-6">
+						<span class="glyphicon glyphicon-question-sign" popover-trigger="mouseenter" popover-append-to-body="true" popover-title="Month" uib-popover-template="'month'"></span>
+						Month
+					</label>
 					<div class="col-sm-3">
 						<select name="month" id="month" class="form-control" data-ng-model="model.month" data-ng-options="m for m in months"></select>
 					</div>
@@ -58,18 +69,18 @@
 					<div class="col-sm-3"><input type="number" class="form-control" id="elderCount" name="elderCount" data-ng-model="model.elderCount" /></div>
 				</div>
 				<div class="form-group">
-					<label for="elderAttend" class="control-label col-sm-6">
-						<span class="glyphicon glyphicon-question-sign" popover-trigger="mouseenter" popover-append-to-body="true" popover-title="Elders That Attended" uib-popover-template="'elderAttend'"></span>
-						Elders that attended
-					</label>
-					<div class="col-sm-3"><input type="number" class="form-control" id="elderAttend" name="elderAttend" data-ng-model="model.elderAttend" /></div>
-				</div>
-				<div class="form-group">
 					<label for="prospectiveElderCount" class="control-label col-sm-6">
 						<span class="glyphicon glyphicon-question-sign" popover-trigger="mouseenter" popover-placement="top" popover-append-to-body="true" popover-title="Total Number of Prospective Elders" uib-popover-template="'prospectiveElderCount'"></span>
 						Total Number of Prospective Elders
 					</label>
 					<div class="col-sm-3"><input type="number" class="form-control" id="prospectiveElderCount" name="prospectiveElderCount" data-ng-model="model.prospectiveElderCount" /></div>
+				</div>
+				<div class="form-group">
+					<label for="elderAttend" class="control-label col-sm-6">
+						<span class="glyphicon glyphicon-question-sign" popover-trigger="mouseenter" popover-append-to-body="true" popover-title="Elders That Attended" uib-popover-template="'elderAttend'"></span>
+						Elders that attended
+					</label>
+					<div class="col-sm-3"><input type="number" class="form-control" id="elderAttend" name="elderAttend" data-ng-model="model.elderAttend" /></div>
 				</div>
 				<div class="form-group">
 					<label for="prospectiveElderAttend" class="control-label col-sm-6">
@@ -129,11 +140,17 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="eldersNotAttendingList" class="control-label col-sm-6">List of Elders not attending</label>
+					<label for="eldersNotAttendingList" class="control-label col-sm-6">
+						<span class="glyphicon glyphicon-question-sign" popover-trigger="mouseenter" popover-placement="top" popover-append-to-body="true" popover-title="Elders Not Attending" uib-popover-template="'eldersNotAttending'"></span>
+						List of Elders not attending
+					</label>
 					<div class="col-sm-6 col-md-3"><textarea name="eldersNotAttendingList" id="eldersNotAttendingList" rows="5" class="form-control" data-ng-model="model.eldersNotAttendingList" ng-model-options="delayUpdate" placeholder="{{listPlaceholder}}"></textarea></div>
 				</div>
 				<div class="form-group">
-					<label for="prospectiveElderList" class="control-label col-sm-6">List of Prospective Elders progressing toward ordination</label>
+					<label for="prospectiveElderList" class="control-label col-sm-6">
+						<span class="glyphicon glyphicon-question-sign" popover-trigger="mouseenter" popover-placement="top" popover-append-to-body="true" popover-title="Prospective Elders Progressing" uib-popover-template="'prospectiveEldersProgress'"></span>
+						List of Prospective Elders progressing toward ordination
+					</label>
 					<div class="col-sm-6 col-md-3"><textarea name="prospectiveElderList" id="prospectiveElderList" rows="5" class="form-control" data-ng-model="model.prospectiveElderList" ng-model-options="delayUpdate" placeholder="{{listPlaceholder}}"></textarea></div>
 				</div>
 				<div class="form-group">
@@ -152,6 +169,20 @@
 								<h3 class="panel-title">Families not visited by Home Teachers</h3>
 							</div>
 							<div class="panel-body">
+								<div class="alert alert-info">
+									<p>Though you can certainly edit this section, it is not really needed as long as you are including the list of <strong>Families Not Visited</strong>.</p>
+									<p>
+										To get the <strong>Families Not Visited</strong> along with the <strong>Statistics by Month</strong>:
+										<ul>
+											<li>Go to <strong>LCR &gt; Organizations &gt; Home and Visiting Teaching</strong>.</li>
+											<li>Make sure the <strong>Overview</strong> tab is selected.</li>
+											<li>Make sure the <strong>Percentages</strong> is selected. (On the right side of the page.)</li>
+											<li>Click <strong>Print</strong>. (A dropdown will appear.)</li>
+											<li>Check <strong>Statistics by Month</strong> and <strong>Households Not visited in 3 Months</strong></li>
+											<li>Click the <strong>Print</strong> button. (The button below the checkboxes you just checked.)</li>
+										</ul>
+									</p>
+								</div>
 								<table class="table table-responsive table-condensed">
 									<thead>
 										<tr>

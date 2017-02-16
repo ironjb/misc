@@ -104,19 +104,33 @@ myApp.controller('htReportCtrl', ['$scope', function($scope) {
 
 // Templates
 myApp.run(['$templateCache', function ($templateCache) {
-	$templateCache.put('elderCount', [
+	$templateCache.put('month', [
 		'<div>',
-		'	Total Number of Elders can be found by going to <strong>Organizations &gt; Elders Quorum</strong>. Scroll to the bottom of the list to find the number of Elders',
+		'	Previous month... the month you are doing the report on.',
 		'</div>',
 	''].join('\n'));
-	$templateCache.put('elderAttend', [
+	$templateCache.put('elderCount', [
 		'<div>',
-		'	Count the number from the <strong>Attendance Role</strong> (Don\'t forget the Elders from Primary, YM, etc...)',
+		'	<ul>',
+		'		<li>Go to <strong>LCR</strong>.</li>',
+		'		<li>Click on the <strong>Organizations</strong> dropdown.</li>',
+		'		<li>Click on <strong>Elders Quorum</strong>.</li>',
+		'		<li>Click on the <strong>Members</strong> tab.</li>',
+		'		<li>Click on the <strong>Options</strong> dropdown.</li>',
+		'		<li>Under <strong>Filter By</strong>, select <strong>Elder</strong>.</li>',
+		'	</ul>',
+		//'	Total Number of Elders can be found by going to <strong>Organizations &gt; Elders Quorum</strong>. Scroll to the bottom of the list to find the number of Elders',
 		'</div>',
 	''].join('\n'));
 	$templateCache.put('prospectiveElderCount', [
 		'<div>',
-		'	From Bishop???',
+		'	Same as getting the <strong>Total Number of Elders</strong> like you did in the previous step, except you <strong>Filter By: Prospective Elder</strong> instead.',
+		//'	From Bishop???',
+		'</div>',
+	''].join('\n'));
+	$templateCache.put('elderAttend', [
+		'<div>',
+		'	Count the number from the <strong>Attendance Role</strong> (Not including the Prospective Elders. Also, Don\'t forget the Elders from Primary, YM, etc...)',
 		'</div>',
 	''].join('\n'));
 	$templateCache.put('prospectiveElderAttend', [
@@ -126,9 +140,9 @@ myApp.run(['$templateCache', function ($templateCache) {
 	''].join('\n'));
 	$templateCache.put('familiesAssigned', [
 		'<div>',
-		'	The best way to get this number:',
+		//'	The best way to get this number:',
 		'	<ul>',
-		'		<li>Go to <strong>Organizations &gt; Home and Visiting Teaching</strong>.</li>',
+		'		<li>Go to <strong>LCR &gt; Organizations &gt; Home and Visiting Teaching</strong>.</li>',
 		'		<li>Select the <strong>Overview</strong> tab.</li>',
 		'		<li>Click the <strong>Totals</strong> button on the right side (as opposed to <strong>Percentages</strong>).</li>',
 		'		<li>To the right of <strong>Elder Visits</strong> you will see numbers like <strong>XX/XX</strong>. Use the number on the right (XX/<strong>XX</strong>).</li>',
@@ -153,6 +167,16 @@ myApp.run(['$templateCache', function ($templateCache) {
 	$templateCache.put('ppiCount', [
 		'<div>',
 		'	Get this number from each District Leader.',
+		'</div>',
+	''].join('\n'));
+	$templateCache.put('eldersNotAttending', [
+		'<div>',
+		'	Does not need to be ALL the Elders not attending Elders Quorum. Just the ones who sometimes or normally come, but have not for the month you are reporting on.',
+		'</div>',
+	''].join('\n'));
+	$templateCache.put('prospectiveEldersProgress', [
+		'<div>',
+		'	The <strong>Prospective Elders</strong> the EQ presidency is focusing on.',
 		'</div>',
 	''].join('\n'));
 	$templateCache.put('tmpl', [
