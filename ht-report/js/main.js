@@ -6,12 +6,10 @@ myApp.controller('htReportCtrl', ['$scope', function($scope) {
 	var familyNotVisitedTemplate = { family: null, homeTeachers: null };
 	var memberMaintenanceTemplate = { name: null, isMovingIn: false, info: null, address: null };
 	var wardNameLocalStr = localStorage.wardName || null;
-	$scope.listPlaceholder = 'Hit "Enter" after each name.';
-	$scope.delayUpdate = { updateOn: 'default blur', debounce: { 'default': 1000, 'blur': 0 } };
-	$scope.months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-	$scope.model = {
+	var monthsArray = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+	var defaultModel = {
 		wardName: wardNameLocalStr
-		, month: $scope.months[prevMonth]
+		, month: monthsArray[prevMonth]
 		,year: prevMonthYear
 		,elderCount: null
 		,elderAttend: null
@@ -30,6 +28,36 @@ myApp.controller('htReportCtrl', ['$scope', function($scope) {
 		]
 		,memberMaintenance: []
 	};
+
+	var parseHtModel = (typeof sessionStorage.htModel === 'string')? JSON.parse(sessionStorage.htModel) : '';
+	var modelSession = (parseHtModel !== '')? parseHtModel : defaultModel;
+
+	$scope.listPlaceholder = 'Hit "Enter" after each name.';
+	$scope.delayUpdate = { updateOn: 'default blur', debounce: { 'default': 1000, 'blur': 0 } };
+	$scope.months = angular.copy(monthsArray);
+	$scope.model = angular.copy(modelSession);
+	// $scope.months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+	// $scope.model = {
+	// 	wardName: wardNameLocalStr
+	// 	, month: $scope.months[prevMonth]
+	// 	,year: prevMonthYear
+	// 	,elderCount: null
+	// 	,elderAttend: null
+	// 	,prospectiveElderCount: null
+	// 	,prospectiveElderAttend: null
+	// 	,familiesAssigned: null
+	// 	,familiesNotAssigned: null
+	// 	,familiesVisited: null
+	// 	,companionshipCount: null
+	// 	,ppiCount: null
+	// 	,eldersNotAttendingList: ''
+	// 	,prospectiveElderList: ''
+	// 	,quorumPresidencyVisitsList: ''
+	// 	,familiesNotVisited: [
+	// 		{ family: 'See attached list', homeTeachers: null }
+	// 	]
+	// 	,memberMaintenance: []
+	// };
 	$scope.eldersNotAttending = [];
 	$scope.prospectiveEldersProgressing = [];
 	$scope.presidencyVisits = [];
@@ -38,6 +66,7 @@ myApp.controller('htReportCtrl', ['$scope', function($scope) {
 		var jsonString = JSON.stringify($scope.model);
 		if (typeof jsonString === 'string') {
 			$scope.backupData = jsonString;
+			sessionStorage.htModel = jsonString;
 		}
 	}, true);
 
@@ -83,6 +112,11 @@ myApp.controller('htReportCtrl', ['$scope', function($scope) {
 		if (confirmRemove) {
 			$scope.model.memberMaintenance.splice(i,1);
 		}
+	};
+
+	$scope.removeSessionModel = function () {
+		sessionStorage.removeItem('htModel');
+		location.reload();
 	};
 
 	$scope.restoreData = function () {
