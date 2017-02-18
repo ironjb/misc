@@ -1,0 +1,36 @@
+#############################
+Download the .deb file (choose the 64 bit version)
+
+#############################
+There was an issue by just double clicking on it to install it, so...
+
+Instead use the following commands in terminal:
+
+	sudo dpkg -i <name-of-moneydance-file>.deb
+	sudo apt-get install -f
+
+
+#############################
+Another option is to use Gdebi. First install Gdebi:
+
+	sudo apt-get install gdebi gdebi-core
+
+Then right click on the moneydance .deb file and select "Open with Gdebi Package Installer".
+
+#############################
+.md files are no longer used... however you can import them.
+
+On the welcome screen (before any account is set up) choose the "Open Other..." option.  Then select the .md file and choose Convert and Import.
+
+https://infinitekind.zendesk.com/hc/en-us/articles/201036816-Converting-to-Moneydance-2014-from-an-earlier-version-of-Moneydance
+
+#############################
+After the install, you need to register it with the following key:
+B309182-FDF4A20A
+
+#############################
+Move data to different location, such as dropbox
+https://infinitekind.zendesk.com/hc/en-us/articles/200734407-How-to-move-your-data-file-to-a-different-location-in-Moneydance-2012http://
+
+
+

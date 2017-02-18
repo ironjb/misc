@@ -1,0 +1,93 @@
+# apt vs apt-get
+http://askubuntu.com/questions/445384/what-is-the-difference-between-apt-and-apt-get
+
+#Make executable (also see file-ownership-permissions.md file)
+chmod +x <name-of-script>
+
+#find version of linux
+lsb_release -a
+
+# Find your hostname (use .local for ssh and stuff)
+hostname
+
+#http://www.tecmint.com/35-practical-examples-of-linux-find-command/
+#find files recursively (-iname is case insensative) and sends to trash
+find -iname thumbs.db -type f -exec trash {} \;
+
+#to rename all the files in a folder
+#see: http://stackoverflow.com/questions/6329505/how-to-rename-all-file-in-a-folder-with-a-suffix-in-a-single-unix-command
+$ for FILENAME in *; do mv $FILENAME Unix_$FILENAME; done
+
+#another way to rename... see: http://www.tecmint.com/rename-multiple-files-in-linux/
+#example:
+rename 's/old-name/new-name/' files
+#takes out _000_ and puts only _
+rename 's/_000_/_/' *.*
+
+#search repository
+apt-cache search [keyword]
+
+#search packages already installed
+dpkg -l *<somefile>*
+
+#kill a process
+pkill [processname]
+
+#copy files with progress info
+rsync --progress --human-readable <file> <destination>
+rsync -P --human-readable <file> <destination>
+
+#rsync with pipe
+#http://www.cyberciti.biz/faq/show-progress-during-file-transfer/
+rsync -P --human-readable <file> <destination> | pv -lpes <Number-Of-Files>
+
+#make directory
+mkdir
+
+#create symlink so you can run program from any location in terminal
+sudo ln -s /opt/<name of symlink> /usr/bin/<name of program>
+
+#empty trash
+trash-empty
+
+#clear terminal history
+history -cw
+
+
+
+##Simple Web Server##
+#go to the directory where you want the web server to run and then type the following command:
+python -m SimpleHTTPServer 8080
+
+#screen commands
+#to list screens
+screen -ls
+
+#to create screen with name
+screen -S [nameOfScreen]
+
+#to detach from screen
+Ctrl+a,d
+
+#to re-attach to screen
+screen -r [nameOr#OfScreen]
+
+#to kill screen - connect to screen
+Ctrl+a, then type ':quit'
+
+#to start an application from the terminal and detatch it
+<appname> &
+
+#to detatch from terminal after
+#first interrupt the app
+ctrl-z
+#next, set to background
+bg
+#next, find the job number
+jobs
+#next, detatch job number
+disown [#]
+
+
+
+

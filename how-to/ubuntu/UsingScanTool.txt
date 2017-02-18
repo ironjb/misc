@@ -1,0 +1,100 @@
+using scan tool
+
+command to start:
+brscan-skey
+
+command to terminate:
+brscan-skey -t
+
+command to view scanner:
+brscan-skey -l
+
+
+
+
+In order to get it to scan in PDF do the following:
+cmd: sudo apt-get install sane
+cmd: sudo apt-get install psutils
+
+go to this directory:
+/opt/brother/scanner/brscan-skey/script/
+
+and edit this file (make a backup first):
+scantofile-x.x.x-x.sh
+
+replace the code with the following code:
+#=========================================copy below this line========================================
+#! /bin/sh
+set +o noclobber
+#
+#   $1 = scanner device
+#   $2 = friendly name
+#
+
+#   
+#       100,200,300,400,600
+#
+resolution=100
+device=$1
+BASE=~/brscan
+mkdir -p $BASE
+
+if [ "`which usleep`" != ' ' ];then
+    usleep 10000
+
+else
+    sleep  0.01
+fi
+output_tmp=$BASE/$(date | sed s/' '/'_'/g | sed s/'\:'/'_'/g)
+
+echo "scan from $2($device)"
+scanadf --device-name "$device" --resolution $resolution -o"$output_tmp"_%04d
+for pnmfile in $(ls "$output_tmp"*)
+do
+   echo pnmtops  "$pnmfile"  "$pnmfile".ps
+   pnmtops  "$pnmfile"  > "$pnmfile".ps
+   rm -f "$pnmfile"
+done
+
+echo psmerge -o"$output_tmp".ps  $(ls "$output_tmp"*.ps)
+psmerge -o"$output_tmp".ps  $(ls "$output_tmp"*.ps)
+
+echo ps2pdf "$output_tmp".ps   "$output_tmp".pdf
+ps2pdf "$output_tmp".ps   "$output_tmp".pdf
+
+#cleanup
+
+for psfile in $(ls "$output_tmp"*.ps)
+do
+   rm $psfile
+done
+rm -f "$pnmfile".ps
+#=========================================copy above this line========================================
+
+
+This is the original code:
+#=========================================copy below this line========================================
+#! /bin/sh
+set +o noclobber
+#
+#   $1 = scanner device
+#   $2 = friendly name
+#
+
+#   
+#       100,200,300,400,600
+#
+resolution=100
+device=$1
+mkdir -p ~/brscan
+if [ "`which usleep  2>/dev/null `" != '' ];then
+    usleep 10000
+else
+    sleep  0.01
+fi
+output_file=~/brscan/brscan_"`date +%Y-%m-%d-%H-%M-%S`"".pnm"
+#echo "scan from $2($device) to $output_file"
+scanimage --device-name "$device" --resolution $resolution> $output_file  2>/dev/null
+echo  $output_file is created.
+#=========================================copy above this line========================================
+

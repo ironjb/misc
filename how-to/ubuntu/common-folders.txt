@@ -1,0 +1,19 @@
+https://help.ubuntu.com/community/LinuxFilesystemTreeOverview
+
+#Most installed Applications
+/usr/bin/
+
+#device files like cd drive (/dev/sr0) and other hardware
+/dev/
+
+#location of most config files such as fstab
+/etc/
+
+#place to put software not handled by packages
+/opt/
+
+#.desktop files
+/usr/share/applications/
+~/.local/share/applications/
+
+
