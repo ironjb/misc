@@ -1,0 +1,15 @@
+{
+	"compileOnSave": true,
+	"compilerOptions": {
+		"module": "AMD",
+		"removeComments": true,
+		"typeRoots" : ["./Scripts/typings"],
+		"outDir": "./",
+		"rootDir": "./"
+	},
+	"exclude": [
+		"node_modules",
+		"wwwroot",
+		"bower_components"
+	]
+}
