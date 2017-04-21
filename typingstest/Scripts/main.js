@@ -3,6 +3,7 @@ var MyMod;
     $('#demo').html('test2');
     var x = { foo: 'foofoo', bar: 4 };
     window.console && console.log('demo set', x);
+    var widgetX = { Name: 'test', Value: 'val test' };
     var helper = (function () {
         function helper() {
             this.message = 'init message';

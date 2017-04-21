@@ -1,6 +1,6 @@
 // import * as $ from "jquery";
 
-declare namespace ITypeTest {
+declare namespace IMain {
 	interface myType {
 		foo: string;
 		bar: number;
@@ -9,8 +9,13 @@ declare namespace ITypeTest {
 
 namespace MyMod {
 	$('#demo').html('test2');
-	var x: ITypeTest.myType = { foo: 'foofoo', bar: 4 };
+	var x: IMain.myType = { foo: 'foofoo', bar: 4 };
 	window.console && console.log('demo set', x);
+
+	var widgetX: IWidget.INameValue = { Name: 'test', Value: 'val test' };
+
+	var hlpr = new MyWidget.helpers();
+	var lowerText = hlpr.lowerify('LOWer');
 
 	export class helper {
 		message: string;
