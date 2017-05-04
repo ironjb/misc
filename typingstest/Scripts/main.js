@@ -4,6 +4,8 @@ var MyMod;
     var x = { foo: 'foofoo', bar: 4 };
     window.console && console.log('demo set', x);
     var widgetX = { Name: 'test', Value: 'val test' };
+    var hlpr = new MyWidget.helpers();
+    var lowerText = hlpr.lowerify('LOWer');
     var helper = (function () {
         function helper() {
             this.message = 'init message';

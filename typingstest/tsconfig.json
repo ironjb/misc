@@ -1,11 +1,12 @@
 {
 	"compileOnSave": true,
 	"compilerOptions": {
-		"module": "AMD",
+		"module": "amd",
+		// "typeRoots": ["./Scripts/typings"],
 		"removeComments": true,
-		"typeRoots" : ["./Scripts/typings"],
 		"outDir": "./",
-		"rootDir": "./"
+		"rootDir": "./",
+		"inlineSourceMap": true
 	},
 	"exclude": [
 		"node_modules",

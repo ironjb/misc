@@ -1,9 +1,11 @@
-// import * as $ from "jquery";
-
 declare namespace IMain {
 	interface myType {
 		foo: string;
 		bar: number;
+	}
+
+	interface myModalScope extends ng.ui.bootstrap.IModalServiceInstance {
+		blah: string;
 	}
 }
 
@@ -13,6 +15,7 @@ namespace MyMod {
 	window.console && console.log('demo set', x);
 
 	var widgetX: IWidget.INameValue = { Name: 'test', Value: 'val test' };
+	//var mdlScp: IMain.myModalScope = { blah: 'test' };
 
 	var hlpr = new MyWidget.helpers();
 	var lowerText = hlpr.lowerify('LOWer');
