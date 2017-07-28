@@ -38,20 +38,19 @@ Javascript encode html
 ```javascript
 // http://stackoverflow.com/questions/1219860/html-encoding-in-javascript-jquery
 function htmlEncode(value){
-            //create a in-memory div, set it's inner text(which jQuery automatically encodes)
-            //then grab the encoded contents back out.  The div never exists on the page.
-            return $('<div/>').text(value).html();
+	//create a in-memory div, set it's inner text(which jQuery automatically encodes)
+	//then grab the encoded contents back out.  The div never exists on the page.
+	return $('<div/>').text(value).html();
 }
 
 function htmlDecode(value){
-            return $('<div/>').html(value).text();
+	return $('<div/>').html(value).text();
 }
 ```
 
 ---
 
-Our design group has updated your e-mail signature to be more uniform to the look and feel of the other Bankrate businesses.  Please see your new e-mail signature below and update your phone numbers and e-mail address where indicated.  Also, please ask your entire team to adopt this new signature as well.
-
+Our design group has updated your e-mail signature to be more uniform to the look and feel of the other Bankrate businesses.  Please see your new e-mail signature below and update your phone numbers and e-mail address where indicated.  Also, please ask your entire team to adopt this new signature as well.  
 https://bankratecom.atlassian.net/wiki/spaces/BB/pages/75932865/Email+Signatures
 
 ---
@@ -91,35 +90,35 @@ The following code worked:
 ```html
 <!DOCTYPE html>
 <html>
-<head>
-<title>Multiple jQuery noConflict Test</title>
-</head>
-<body>
-<h3>Multiple jQuery noConflict Test</h3>
-
-<!-- load jQuery 1.12.3 -->
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
-<script type="text/javascript">
-//var jQuery_1_12_3 = $.noConflict(true);
-console.log(jQuery.fn.jquery);
-$(function() {
-console.log('ready shortcut', $.fn.jquery);
-});
-</script>
+	<head>
+		<title>Multiple jQuery noConflict Test</title>
+	</head>
+	<body>
+		<h3>Multiple jQuery noConflict Test</h3>
 
 
-<!-- load jQuery 1.9.1 -->
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.js"></script>
-<script type="text/javascript">
-var jQuery_1_9_1 = $.noConflict(true);
+		<!-- load jQuery 1.12.3 -->
+		<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+		<script type="text/javascript">
+			//var jQuery_1_12_3 = $.noConflict(true);
+			console.log(jQuery.fn.jquery);
+			$(function() {
+				console.log('ready shortcut', $.fn.jquery);
+			});
+		</script>
 
 
-console.log('no conflict version', jQuery_1_9_1.fn.jquery);
+		<!-- load jQuery 1.9.1 -->
+		<script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.js"></script>
+		<script type="text/javascript">
+			var jQuery_1_9_1 = $.noConflict(true);
 
-console.log('after', jQuery.fn.jquery);
-console.log('after $', $.fn.jquery);
-</script>
+			console.log('no conflict version', jQuery_1_9_1.fn.jquery);
 
-</body>
+			console.log('after', jQuery.fn.jquery);
+			console.log('after $', $.fn.jquery);
+		</script>
+
+	</body>
 </html>
 ```
