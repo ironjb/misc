@@ -1,3 +1,7 @@
+# Accessing an USB drive from terminal
+https://askubuntu.com/questions/232497/how-to-access-gvfs-mounts-from-command-line
+/run/user/<uid>/gvfs/<mtpAddress>
+
 # apt vs apt-get
 http://askubuntu.com/questions/445384/what-is-the-difference-between-apt-and-apt-get
 
