@@ -1,0 +1,40 @@
+[{
+	"keys": ["ctrl+k", "ctrl+f9"],
+	"command": "angular_module_to_attribute"
+}, {
+	"keys": ["ctrl+k", "ctrl+f10"],
+	"command": "angular_attribute_to_module"
+}, {
+	"keys": ["ctrl+alt+shift+-"],
+	"command": "angular_module_to_attribute"
+}, {
+	"keys": ["ctrl+alt+shift+="],
+	"command": "angular_attribute_to_module"
+}, {
+	"keys": ["ctrl+alt+shift+'"],
+	"command": "angular_escape_single_quote"
+}, {
+	"keys": ["ctrl+alt+shift+2"],
+	"command": "razor_remove_comments"
+}, {
+	"keys": ["alt+shift+6"],
+	"command": "set_layout",
+	"args": {
+		"cols": [0.0, 0.9, 1.0],
+		"rows": [0.0, 1.0],
+		"cells": [
+			[0, 0, 1, 1],
+			[1, 0, 2, 1]
+		]
+	}
+}, {
+	"keys": ["ctrl+k", "ctrl+f"],
+	"command": "run_macro_file",
+	"args": {"file": "Packages/User/fomatJSON.sublime-macro"}
+}, {
+	"keys": ["ctrl+alt+t"],
+	"command": "open_terminal"
+}, {
+	"keys": ["ctrl+shift+t"],
+	"command": "reopen_last_file"
+}]

@@ -1,0 +1,7 @@
+{
+	"indent_with_tabs": true,
+	"brace_style": "collapse",
+	"comma_first": true,
+	"keep_function_indentation": false,
+	"keep_array_indentation": false
+}

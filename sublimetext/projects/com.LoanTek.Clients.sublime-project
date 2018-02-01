@@ -1,0 +1,10 @@
+{
+	"folders":
+	[
+		{
+			"path": "D:\\LoanTek\\Current\\com.LoanTek.Clients\\com.LoanTek.Clients",
+			"name": "com.LoanTek.Clients - main branch",
+			"file_exclude_patterns": ["*.js.map"]
+		}
+	]
+}

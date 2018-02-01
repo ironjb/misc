@@ -1,0 +1,27 @@
+[
+	{
+		"caption": "jmb Angular: Module to Attribute",
+		"command": "angular_module_to_attribute"
+	},
+	{
+		"caption": "jmb Angular: Attribute to Module",
+		"command": "angular_attribute_to_module"
+	},
+	{
+		"caption": "jmb Angular: Escape Single Quote",
+		"command": "angular_escape_single_quote"
+	},
+	{
+		"caption": "jmb Razor: Remove Comments",
+		"command": "razor_remove_comments"
+	},
+	{
+		"caption": "jmb Macro: JSON Syntax/Format",
+		"command": "run_macro_file",
+		"args": {"file": "Packages/User/fomatJSON.sublime-macro"}
+	},
+	{
+		"caption": "jmb Alignment: Align",
+		"command": "alignment"
+	}
+]

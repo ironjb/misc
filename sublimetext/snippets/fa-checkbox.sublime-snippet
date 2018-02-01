@@ -1,0 +1,15 @@
+<snippet>
+	<content><![CDATA[
+<div class="checkbox checkbox-fa">
+	<label for="${1:InputId}" class="${2:col-form-label}">
+		<input id="${1:InputId}" type="checkbox" />
+		<i class="checkbox-i"></i>
+		${3:Text}
+	</label>
+</div>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>fa-checkbox</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

@@ -1,0 +1,28 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"AdvancedNewFile",
+		"Alignment",
+		"AngularJS",
+		"ApplySyntax",
+		"DocBlockr",
+		"Emmet",
+		"jQuery",
+		"JsFormat",
+		"LESS",
+		"Less2Css",
+		"MarkdownLivePreview",
+		"Minify",
+		"Ngx HTML",
+		"Package Control",
+		"Razor",
+		"RevertFontSize",
+		"Sass",
+		"Terminal",
+		"TypeScript"
+	]
+}

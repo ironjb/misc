@@ -1,0 +1,9 @@
+{
+	"font_size": 8,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"revert_font_size": 8,
+	"trim_trailing_white_space_on_save": true
+}
