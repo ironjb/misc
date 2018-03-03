@@ -8,6 +8,9 @@ http://askubuntu.com/questions/445384/what-is-the-difference-between-apt-and-apt
 #Make executable (also see file-ownership-permissions.md file)
 chmod +x <name-of-script>
 
+# Zip with password
+zip --encrypt file.zip files
+
 #find version of linux
 lsb_release -a
 
