@@ -221,13 +221,20 @@ After the install, you need to register it with the key.
 After this it will send out a test print... you should be done.
 
 If the scanner can't be found, you may look into the following:
-[This](http://ubuntuforums.org/showthread.php?t=2321613&page=2) and
-[this](http://ubuntuforums.org/showthread.php?t=2043258).
+[This](http://ubuntuforums.org/showthread.php?t=2321613&page=2),
+[this](http://ubuntuforums.org/showthread.php?t=2043258), and
+[this for ubuntu 18.04](https://ubuntuforums.org/showthread.php?t=2390815&page=2).
 
 These suggest copying **/usr/lib64/sane** to **/usr/lib/sane**
 
 ```bash
 sudo cp -r /usr/lib64/sane /usr/lib/sane
+```
+
+For **Ubuntu 18.04** use the following:
+
+```bash
+sudo cp /usr/lib64/sane/libsane-brother* /usr/lib/x86_64-linux-gnu/sane
 ```
 
 
