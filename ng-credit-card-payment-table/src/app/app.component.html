@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <p>Starting Balance: {{startingBalance | currency}}</p>
+      <p>Monthly Payment: {{payment | currency}}</p>
+      <p>Interest: {{interest}}%</p>
+      <p>Total Payments add up to: {{total | currency}}</p>
+      <table class="table table-sm">
+        <thead>
+          <tr>
+            <th>Month</th>
+            <th class="text-right">Interest Payment</th>
+            <th class="text-right">Balance + Interest</th>
+            <th class="text-right">Payment</th>
+            <th class="text-right">New Balance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let b of balances">
+            <td [class.font-weight-bold]="b.month % 12 === 0">{{b.month}}<span *ngIf="b.month % 12 === 0"> (year {{b.month / 12}})</span></td>
+            <td class="text-right">{{b.fee | currency}}</td>
+            <td class="text-right">{{b.balPlusFee | currency}}</td>
+            <td class="text-right">{{b.monthPayment | currency}}</td>
+            <td class="text-right">{{b.rBalance | currency}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
