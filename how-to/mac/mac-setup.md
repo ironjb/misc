@@ -57,7 +57,7 @@ In **Git Bash** on Windows, you can start typing the name of a branch and then h
 	cp /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash ~/.git-completion.bash
 	```
 
-	The `git-completion.bash` file should already come with the MacOS command line tools (`xcode-select --install`).  If not, you can download it [here](assets/.git-completion.bash) and place it in your home directory.
+	The `git-completion.bash` file should already come with the MacOS command line tools (`xcode-select --install`).  If not, you can download it [here](assets/downloads/.git-completion.bash) and place it in your home directory.
 
 2. Open `~/.profile` in your favorite text editor and add the following lines of code:
 
