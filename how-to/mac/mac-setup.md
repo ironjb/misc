@@ -22,31 +22,53 @@ git config --global https.sslVerify false
 
 ## Display Git branch name in terminal
 
-On Mac, the terminal does not show the branch name you are on like it does in **Git Bash**.  To get this working, you will need to download and save this [.git-branch-in-prompt.bash](assets/.git-branch-in-prompt.bash) file to your home directory.
+In **Git Bash** on Windows, the branch name is shown when you are in a git repository.  The Mac terminal does not do this out of the box.  You will need to follow the steps below to get this to work:
 
-Then, in `~/.profile`, add the following lines of code:
+1. Open the terminal and copy the `git-prompt.sh` file into your home directory with the following command:
 
-```bash
-# GIT: display branch in prompt
-if [ -f ~/.git-branch-in-prompt.bash ]; then
-  . ~/.git-branch-in-prompt.bash
-fi
-```
+	```bash
+	cp /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh ~/.git-prompt.sh
+	```
+
+	The `git-prompt.sh` file should already come with the MacOS command line tools (`xcode-select --install`).  If not, you can download it [here](assets/downloads/.git-prompt.sh) and place it in your home directory.
+
+2. Open `~/.profile` in your favorite text editor and add the following lines of code:
+
+	```bash
+	# GIT: display branch in prompt
+	if [ -f ~/.git-prompt.sh ]; then
+	. ~/.git-prompt.sh
+	fi
+
+	export PS1='\u@\h \W\[\033[32m\]$(__git_ps1 " (%s)")\[\033[00m\] \$ '
+	```
+
+3. Close and re-open the terminal for changes to go into effect.
 
 ---
 
 ## Git autocomplete branch name
 
-In **Git Bash** on Windows, you can start typing the name of a branch and then hit the TAB key to autocomplete the branch name.  The Mac terminal does not do this.  In order for this to work on Mac, you will need to download this [.git-completion.bash](assets/.git-completion.bash) file to your home directory.
+In **Git Bash** on Windows, you can start typing the name of a branch and then hit the TAB key to autocomplete the branch name.  The Mac terminal does not do this out of the box.  You will need follow the steps below to get this to work:
 
-Then, in `~/.profile`, add the following lines of code:
+1. Open the terminal and copy the `git-completion.bash` file into your home directory with the following command:
 
-```bash
-# GIT: autocomplete branch name in terminal
-if [ -f ~/.git-completion.bash ]; then
-  . ~/.git-completion.bash
-fi
-```
+	```bash
+	cp /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash ~/.git-completion.bash
+	```
+
+	The `git-completion.bash` file should already come with the MacOS command line tools (`xcode-select --install`).  If not, you can download it [here](assets/.git-completion.bash) and place it in your home directory.
+
+2. Open `~/.profile` in your favorite text editor and add the following lines of code:
+
+	```bash
+	# GIT: autocomplete branch name in terminal
+	if [ -f ~/.git-completion.bash ]; then
+	  . ~/.git-completion.bash
+	fi
+	```
+
+3. Close and re-open the terminal for changes to go into effect.
 
 ---
 
@@ -113,22 +135,25 @@ export PATH=$PATH:$NPM
 
 ---
 
-## Setup for using VSCode and/or SublimeText in command line
+## Setup for using VSCode, SublimeText, etc. in command line
 
-In order to run `code` and/or `subl` from the command line, you will need to add it/them to the path.  Open the `~/.profile` file and add the following lines of code above the PATH export:
+In order to run `code`, `subl`, etc. from the command line, you will need to add it/them to the path.  Open the `~/.profile` file and add the following lines of code above the PATH export:
 
 ```bash
-#VS Code Path
-VSCODE=/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin
+# VS Code Path (code)
+VSCODE=~/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin
 
-# Sublime Text Path
-SUBL=/Applications/Sublime\ Text.app/Contents/SharedSupport/bin
+# Sublime Text Path (subl)
+SUBL=~/Applications/Sublime\ Text.app/Contents/SharedSupport/bin
+
+# Sublime Merge Path (smerge)
+SMERGE=~/Applications/Sublime\ Merge.app/Contents/SharedSupport/bin
 ```
 
 Then update the PATH to export the additional path(s):
 ```bash
 # Combine Paths
-export PATH=$PATH:$NPM:$VSCODE:$SUBL
+export PATH=$INITIALPATH:$NPM:$VSCODE:$SUBL:$SMERGE
 ```
 
 ---
@@ -174,14 +199,25 @@ export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
 # Node Path
 NPM=~/.npm-packages/bin
 
-#VS Code Path
-VSCODE=/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin
+# VS Code Path (code)
+VSCODE=~/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin
 
-# Sublime Text Path
-SUBL=/Applications/Sublime\ Text.app/Contents/SharedSupport/bin
+# Sublime Text Path (subl)
+SUBL=~/Applications/Sublime\ Text.app/Contents/SharedSupport/bin
+
+# Sublime Merge Path (smerge)
+SMERGE=~/Applications/Sublime\ Merge.app/Contents/SharedSupport/bin
+
+# SASS Path (sass)
+SASS=~/CliApplications/dart-sass
 
 # Combine Paths
-export PATH=$PATH:$NPM:$VSCODE:$SUBL
+export PATH=$INITIALPATH:$NPM:$VSCODE:$SUBL:$SMERGE:$SASS
+
+
+
+# P4Merge
+alias p4merge=~/Applications/p4merge.app/Contents/MacOS/p4merge
 
 
 
@@ -212,8 +248,17 @@ if [ -f ~/.git-completion.bash ]; then
 fi
 
 # GIT: display branch in prompt
-if [ -f ~/.git-branch-in-prompt.bash ]; then
-  . ~/.git-branch-in-prompt.bash
+if [ -f ~/.git-prompt.sh ]; then
+  . ~/.git-prompt.sh
 fi
+
+export PS1='\u@\h \W\[\033[32m\]$(__git_ps1 " (%s)")\[\033[00m\] \$ '
+
+
+
+# Color in terminal
+export CLICOLOR=1;
+export LSCOLORS=exfxcxdxbxegedabagacad;
+
 
 ```
