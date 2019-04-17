@@ -153,7 +153,7 @@ SMERGE=~/Applications/Sublime\ Merge.app/Contents/SharedSupport/bin
 Then update the PATH to export the additional path(s):
 ```bash
 # Combine Paths
-export PATH=$INITIALPATH:$NPM:$VSCODE:$SUBL:$SMERGE
+export PATH=$PATH:$NPM:$VSCODE:$SUBL:$SMERGE
 ```
 
 ---
@@ -212,7 +212,7 @@ SMERGE=~/Applications/Sublime\ Merge.app/Contents/SharedSupport/bin
 SASS=~/CliApplications/dart-sass
 
 # Combine Paths
-export PATH=$INITIALPATH:$NPM:$VSCODE:$SUBL:$SMERGE:$SASS
+export PATH=$PATH:$NPM:$VSCODE:$SUBL:$SMERGE:$SASS
 
 
 
