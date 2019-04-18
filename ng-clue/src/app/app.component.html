@@ -1,0 +1,39 @@
+<div class="container-fluid">
+	<h4>Clue Checklist</h4>
+	<div class="btn-group d-flex" role="group" aria-label="Clue Version">
+		<button type="button" class="btn" [ngClass]="clueVersion === '' ? 'btn-success' : 'btn-outline-secondary'" (click)="changeGameVersion('')">Original</button>
+		<button type="button" class="btn" [ngClass]="clueVersion === 'hp' ? 'btn-success' : 'btn-outline-secondary'" (click)="changeGameVersion('hp')">Harry Potter</button>
+		<button type="button" class="btn" [ngClass]="clueVersion === 'fx' ? 'btn-success' : 'btn-outline-secondary'" (click)="changeGameVersion('fx')">Clue FX</button>
+	</div>
+
+	<div class="card my-3" *ngFor="let group of clueGroups">
+		<h5 class="card-header">
+			<strong>{{group.groupName}}</strong>
+		</h5>
+		<div class="list-group list-group-flush">
+			<div class="list-group-item" *ngFor="let item of group.groupItems">
+				<div class="d-flex">
+					<div class="mr-auto">{{item}}</div>
+					<div>
+						<div class="form-group form-check">
+							<input type="checkbox" class="form-check-input">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- <table class="table">
+			<tbody>
+				<tr *ngFor="let item of group.groupItems">
+					<td>{{item}}</td>
+					<td>
+						<div class="form-group form-check">
+							<input type="checkbox" class="form-check-input">
+						</div>
+					</td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table> -->
+	</div>
+</div>
