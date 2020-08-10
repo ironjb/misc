@@ -10,15 +10,15 @@ VIOLET='\[\033[01;35m\]'
 GREEN_BOLD="\[\033[01;32m\]"
 BLUE_BOLD="\[\033[01;34m\]"
 RESET="\[\033[00m\]"
- 
+
 function color_my_prompt {
   local __user_and_host="$GREEN_BOLD\u@\h$RESET:"
   local __cur_location="$BLUE_BOLD\w"           # capital 'W': current directory, small 'w': full file path
   local __git_branch_color="$GREEN"
   local __prompt_tail="\n$RESET$"
   local __user_input_color="$RESET"
-  local __git_branch=$(__git_ps1); 
-  
+  local __git_branch=$(__git_ps1);
+
   # colour branch name depending on state
   if [[ "${__git_branch}" =~ "*" ]]; then     # if repository is dirty
       __git_branch_color="$RED"
@@ -29,14 +29,14 @@ function color_my_prompt {
   elif [[ "${__git_branch}" =~ "+" ]]; then   # if there are staged files
       __git_branch_color="$CYAN"
   fi
-   
+
   # Build the PS1 (Prompt String)
   PS1="$__user_and_host $__cur_location$__git_branch_color$__git_branch $__prompt_tail$__user_input_color "
 }
- 
+
 # configure PROMPT_COMMAND which is executed each time before PS1
 export PROMPT_COMMAND=color_my_prompt
- 
+
 # if .git-prompt.sh exists, set options and execute it
 if [ -f ~/.git-prompt.sh ]; then
   GIT_PS1_SHOWDIRTYSTATE=true
