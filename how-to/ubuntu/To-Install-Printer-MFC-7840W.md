@@ -1,5 +1,9 @@
 ## Brother Printer MFC-7840W
 
+**Before Install**
+
+Beginning with Ubuntu 24.04, it no longer installs libsane.  Instead libsane1 is installed, but this does not work with the current scanner install.  You can follow the instructions here to install libsane on Ubuntu 24.04: https://askubuntu.com/a/1523484
+
 **NOTE:** A number of files will be created including some _Un-Install_ files. You may want to move these to a different location.
 
 - Go to [support.brother.com](http://support.brother.com)
